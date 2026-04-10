@@ -1,4 +1,4 @@
-# C-Sharp Game Development
+# Unity Game Development
 
 This repo contains the local C# / Unity-style game development course material
 that previously lived in `~/Documents/Work/Juni/C#`.
@@ -15,4 +15,3 @@ labs, including:
 Most folders are lightweight script-first project snapshots rather than full
 Unity editor projects. The goal is to preserve the teaching code and project
 structure without checking in generated cache or build artifacts.
-
