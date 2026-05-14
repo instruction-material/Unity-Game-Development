@@ -1,6 +1,6 @@
 # Third-Party Assets
 
-No third-party assets are included in this UGD-FullProject-Starter baseline.
+No third-party assets are included in this UGD-full-project-solution baseline.
 
 When assets are added, record:
 

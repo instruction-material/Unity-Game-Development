@@ -1,0 +1,64 @@
+name: Verify Unity Course Source
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      run_unity_tests:
+        description: "Run GameCI Unity tests after static verification"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      project_path:
+        description: "Unity project root for manual Unity tests"
+        required: true
+        default: "UGD-full-project-starter"
+        type: choice
+        options:
+          - "UGD-full-project-starter"
+          - "UGD-full-project-solution"
+      test_mode:
+        description: "Unity test mode"
+        required: true
+        default: "EditMode"
+        type: choice
+        options:
+          - "EditMode"
+          - "PlayMode"
+
+jobs:
+  static-source-verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Verify course source package
+        run: ./verify-course-source.sh
+
+  unity-tests:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_unity_tests == 'true' }}
+    needs: static-source-verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Run Unity tests
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: ${{ inputs.project_path }}
+          testMode: ${{ inputs.test_mode }}
+          artifactsPath: unity-test-results/${{ inputs.project_path }}-${{ inputs.test_mode }}
