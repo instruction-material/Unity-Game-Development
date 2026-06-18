@@ -48,7 +48,7 @@ Canonical source repository: `Unity-Game-Development`
 
 ## Source Inventory
 
-- Top-level folders: 22
+- Top-level folders: 23
 - Active linked folders: 22
-- Ledgered inactive/support folders: 0
+- Ledgered inactive/support folders: 1
 - Source-like files: 56
