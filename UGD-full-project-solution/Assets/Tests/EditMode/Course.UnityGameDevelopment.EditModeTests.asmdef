@@ -1,0 +1,13 @@
+{
+    "name": "Course.UnityGameDevelopment.EditModeTests",
+    "references": [
+        "Course.UnityGameDevelopment"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "autoReferenced": false
+}

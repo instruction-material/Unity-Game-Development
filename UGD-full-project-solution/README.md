@@ -21,6 +21,10 @@ completed game-state logic without also debugging editor-created action maps.
 Use the profile contract in `BuildProfiles/README.md`. The expected local build
 profile is `DesktopDevelopment`, outputting to `Builds/DesktopDevelopment`.
 
+## Scene construction
+
+Follow [the complete scene setup](SCENE_SETUP.md) before the first Play Mode session. It includes input settings, object and collider wiring, Start, whole-scene restart, role-specific coin targets and the distinction between component tests and scene acceptance.
+
 ## Verification
 
 1. Open this folder in Unity Hub with the pinned editor version.

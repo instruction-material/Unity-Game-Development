@@ -1,0 +1,11 @@
+{
+    "name": "Course.UnityGameDevelopment.PlayModeTests",
+    "references": [
+        "Course.UnityGameDevelopment"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "autoReferenced": false
+}
